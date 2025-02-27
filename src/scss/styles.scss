@@ -20,3 +20,8 @@
 	/* max-height: 400px; */
 }
 
+@media (max-width: 767px) {
+   .card-container{
+     flex-direction: column-reverse;
+   } 
+}
