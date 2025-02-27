@@ -1,14 +1,13 @@
 doctype html
-html(lang='en')
+html(lang='es')
 
     head
-
         meta(charset='utf-8')
         meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
-        meta(name='description', content)
-        meta(name='author', content)
+        meta(name='description', content='')
+        meta(name='author', content='')
 
-        title Modern Business - Start Bootstrap Template
+        title Pablo Moya - Contacto
 
         // Favicon
         link(rel='icon', type='image/x-icon', href='assets/favicon.ico')
@@ -32,99 +31,58 @@ html(lang='en')
                         .text-center.mb-5
                             .feature.bg-primary.bg-gradient-primary-to-secondary.text-white.rounded-3.mb-3
                                 i.bi.bi-envelope
-                            h1.fw-bolder Get in touch
-                            p.lead.fw-normal.text-muted.mb-0 Let's work together!
+                            h1.fw-bolder Ponte en contacto
+                            p.lead.fw-normal.text-muted.mb-0 ¡Trabajemos juntos!
                         .row.gx-5.justify-content-center
                             .col-lg-8.col-xl-6
 
-                                // * * * * * * * * * * * * * * *
-                                // * * SB Forms Contact Form * *
-                                // * * * * * * * * * * * * * * *
-
-                                // This form is pre-integrated with SB Forms.
-                                // To make this form functional, sign up at
-                                // https://startbootstrap.com/solution/contact-forms
-                                // to get an API token!
-
-                                form#contactForm(data-sb-form-api-token='API_TOKEN')
+                                // Formulario de contacto con Formspree
+                                form(action='https://formspree.io/f/xrgjwgyl', method='POST')
 
                                     // Name input
                                     .form-floating.mb-3
                                         input#name.form-control(
                                             type='text',
-                                            placeholder='Enter your name...'
-                                            data-sb-validations='required'
+                                            name='name',
+                                            placeholder='Ingresa tu nombre...',
+                                            required
                                         )
-                                        label(for='name') Full name
-                                        .invalid-feedback(data-sb-feedback='name:required')
-                                            | A name is required.
+                                        label(for='name') Nombre completo
                                     
                                     // Email address input
                                     .form-floating.mb-3
                                         input#email.form-control(
                                             type='email',
-                                            placeholder='name@example.com'
-                                            data-sb-validations='required,email'
+                                            name='email',
+                                            placeholder='nombre@ejemplo.com',
+                                            required
                                         )
-                                        label(for='email') Email address
-                                        .invalid-feedback(data-sb-feedback='email:required')
-                                            | An email is required.
-                                        .invalid-feedback(data-sb-feedback='email:email')
-                                            | Email is not valid.
+                                        label(for='email') Correo electrónico
                                     
                                     // Phone number input
                                     .form-floating.mb-3
                                         input#phone.form-control(
                                             type='tel',
+                                            name='phone',
                                             placeholder='(123) 456-7890'
-                                            data-sb-validations='required'
                                         )
-                                        label(for='phone') Phone number
-                                        .invalid-feedback(data-sb-feedback='phone:required')
-                                            | A phone number is required.
+                                        label(for='phone') Número de teléfono
                                     
                                     // Message input
                                     .form-floating.mb-3
                                         textarea#message.form-control(
-                                            type='text',
-                                            placeholder='Enter your message here...',
-                                            style='height: 10rem;'
-                                            data-sb-validations='required'
+                                            name='message',
+                                            placeholder='Escribe tu mensaje aquí...',
+                                            style='height: 10rem;',
+                                            required
                                         )
-                                        label(for='message') Message
-                                        .invalid-feedback(data-sb-feedback='message:required')
-                                            | A message is required.
-
-                                    // Submit success message
-                                    //
-                                    // This is what your users will see when the form
-                                    // has successfully submitted
-                                    #submitSuccessMessage.d-none
-                                        .text-center.mb-3
-                                            .fw-bolder Form submission successful!
-                                            | To activate this form, sign up at
-                                            br
-                                            a(href='https://startbootstrap.com/solution/contact-forms') https://startbootstrap.com/solution/contact-forms
-
-                                    // Submit error message
-                                    //
-                                    // This is what your users will see when there is
-                                    // an error submitting the form
-                                    #submitErrorMessage.d-none
-                                        .text-center.text-danger.mb-3 Error sending message!
+                                        label(for='message') Mensaje
 
                                     // Submit Button
                                     .d-grid
-                                        button#submitButton.btn.btn-primary.btn-lg.disabled(type='submit') Submit
+                                        button.btn.btn-primary.btn-lg(type='submit') Enviar
 
         // Footer
         include includes/footer.pug
 
         include includes/scripts.pug
-
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-        // * *                               SB Forms JS                               * *
-        // * * Activate your form at https://startbootstrap.com/solution/contact-forms * *
-        // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-
-        script(src='https://cdn.startbootstrap.com/sb-forms-latest.js')
