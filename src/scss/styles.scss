@@ -11,3 +11,12 @@
 // Import Custom Component Styles
 @import "components/feature";
 @import "components/profile";
+
+.img-fluid {
+   	/* max-width: 400px !important; */
+	max-height: 250px !important;
+	min-width: 400px !important;
+	border-radius: 1vw !important;
+	/* max-height: 400px; */
+}
+
