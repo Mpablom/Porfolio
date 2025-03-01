@@ -2,5 +2,9 @@ footer.bg-white.py-4.mt-auto
     .container.px-5
         .row.align-items-center.justify-content-center.flex-column.flex-sm-row
             .col-auto
-                .small.m-0 Copyright &copy; Pablo Moya 2025
-           
+                .small.m-0 Copyright &copy; Pablo Moya 
+                    span#current-year
+
+    script.
+        const year = new Date().getFullYear();
+        document.getElementById("current-year").textContent = year;
